@@ -1,12 +1,23 @@
-let messUser = 'Маша говорит:\n\'Привет\' ';
+let a =1;
 
-console.log(messUser);
+let b =2;
 
-let messUser_1 = 'Маша говорит:\t\'Привет\' ';
+let c = a++ + a++ + b++;
 
-console.log(messUser_1);
+console.log('c = ', c);
+console.log('a = ', a);
+console.log('b = ', b);
 
 
-let messUser_2 = 'Маша говорит:\u2721\t\'Привет\' ';
+/* let a =1;
 
-console.log(messUser_2);
+let b =2;
+
+let c = --a + ++b;
+
+console.log('c = ', c);
+console.log('a = ', a);
+console.log('b = ', b);
+//ответ:  3 0 3 
+
+*/
