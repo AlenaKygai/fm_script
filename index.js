@@ -1,14 +1,21 @@
-let num = 10;
-console.log(num, typeof num);
+/* 
+type of false:
 
-let str = 'ten';
-console.log(str, typeof str);
+false
+0 
+'' //пустая строка
+Nan 
+null
+undefined
+*/
 
-let varNull = null;
-console.log(varNull, typeof varNull);
-
-let varUndefined = undefined;
-console.log(varUndefined, typeof varUndefined);
 
 
+
+let condition = '12'+ 0;
+console.log(condition, typeof condition);
+
+if (condition){
+  console.log(condition);
+}
 
