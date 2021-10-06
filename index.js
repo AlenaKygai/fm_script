@@ -1,27 +1,14 @@
-// let obj = null;
-// console.log(obj);
+let num = 10;
+console.log(num, typeof num);
 
-/* 
-1/0
-Infinity
-1/ -0
-- Infinity
-0/0
-NaN
-12/'qw'
-Nan
-*/
-//операторы(команды которые воспроизводят действия с оперантами)
-// let num=10;
-// -num
-// -10
-//5/2 -> 2.5
-// -(-5) -> 5
-// Nan + 2 -> Nan
+let str = 'ten';
+console.log(str, typeof str);
 
-// динамическая типизация -> duck test
+let varNull = null;
+console.log(varNull, typeof varNull);
 
-//Type Conversion 
-// 'El' + 'on' -> 'Elon'
+let varUndefined = undefined;
+console.log(varUndefined, typeof varUndefined);
+
 
 
