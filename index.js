@@ -1,9 +1,19 @@
 // alert('I\'m a teacher');
 
 let userInput = prompt('Enter number: ');
-console.log(userInput); 
-console.log(isNaN(Number(userInput))); 
-console.log(typeof Number(userInput)); // явное преобразование
+
+// пустая строка
+// null
+// то что нельзя привести к числу 
+
+let isNotNumber = userInput==='' || userInput===null || isNaN(Number(userInput));
+
+if(isNotNumber){
+  console.log('Error');
+}else{
+  console.log('Well done');
+}
+
 
 
 
