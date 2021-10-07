@@ -1,13 +1,11 @@
-/* 
-8 == 8 (равно)
-8 != 8 (не равно)
-8 === 8 (строгое равенство)
-8 !== 8 (строгое неравенство)
+// alert('I\'m a teacher');
 
-=== оператор строго равенства сравнивает еще и типы 
+let userInput = prompt('Enter number: ');
+console.log(userInput); 
+console.log(isNaN(Number(userInput))); 
+console.log(typeof Number(userInput)); // явное преобразование
 
 
-в практике используем только строгое равенство/неравенство 
 
-*/
+
 
