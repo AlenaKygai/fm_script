@@ -1,21 +1,15 @@
-// alert('I\'m a teacher');
 
-let userInput = prompt('Enter number: ');
+function myFirstFunction(){
+  console.log('text in myFirstFunction');
+}
+myFirstFunction();
 
-// пустая строка
-// null
-// то что нельзя привести к числу 
 
-let isNotNumber = userInput==='' || userInput===null || isNaN(Number(userInput));
-
-if(isNotNumber){
-  console.log('Error');
-}else{
-  console.log('Well done');
+const mySecondFunction = function(){    // function expression
+  console.log('text in mySecondFunction');
 }
 
+mySecondFunction();
 
-
-
-
+console.log(mySecondFunction);
 
