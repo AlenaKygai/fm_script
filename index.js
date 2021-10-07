@@ -1,34 +1,29 @@
 /*  
-логическое сложение ИЛИ   || 
-возвращает первую правду или последнюю ложь 
-1+0=1 1+1=2 0+1=1 0+0=0
+оператор присваивания 
 
 */ 
+ 
+let number = 12;
 
-/*  
-логическое умножение И   && 
-возвращает последнюю правду или первую ложь 
-больше приоритет чем у ИЛИ
-1*0=0 0*1=0 0*0=0 1*1=1 
+number += 10;
 
-*/ 
-let cond = 10 && 'Elon';
-console.log(cond);
+number %= 5;
 
-let cond_1 = false ||  0;
-console.log(cond_1);
+number **= 3;
 
+number /= number;
 
+number *= 4;
 
-let number = 100;
-let min = 10;
-let max = 20;
-
-if (number<min || number>max){
-  console.log('YOU WIN!', number);
-}
+number = (number-2)*4;
 
 
-// if(number>=min && number<=max){
-//   console.log('YOU WIN!', number);
-// }
+console.log(number);
+
+
+let userName = 'Elon';
+// userName += +' Musk';
+userName += ' Musk';
+console.log(userName);
+//ответ: ElonNan 
+
