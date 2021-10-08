@@ -26,30 +26,56 @@
 
 
 
-let sideSquare = prompt('Enter side square', '10');
-/**
- * 
- * @param {number} side 
- * @returns {number | null}
- */
-const getPerimetrSquare = function(side){
-  if(isNaN(side)){
-    return null;
+
+// let sideSquare = '10';
+// /**
+//  * 
+//  * @param {number} side 
+//  * @returns {number | null}
+//  */
+// const getPerimetrSquare = function(side){
+//   if(isNaN(side)){
+//     return null;
+//   }
+//   return 4*side;
+// }
+// /**
+//  * 
+//  * @param {any} value 
+//  * @returns {Number | Nan}
+//  */
+// const convertNumber = function(value){
+//     if(value === null || value === '' || isNaN(Number(value))){
+//       return NaN;
+//     }
+//     return Number(value);
+// }
+
+// console.log(getPerimetrSquare(33));
+// let changeSideSquare = convertNumber(sideSquare)
+// console.log(getPerimetrSquare(changeSideSquare));
+
+
+
+
+
+const isAdult = function(age){
+  if(age<18){
+    return false;
   }
-  return 4*side;
+    return true;
 }
-/**
- * 
- * @param {any} value 
- * @returns {Number | Nan}
- */
-const convertNumber = function(value){
-    if(value === null || value === '' || isNaN(Number(value))){
-      return NaN;
-    }
-    return Number(value);
+console.log(isAdult(20));
+console.log(isAdult(2));
+console.log(isAdult(18));
+console.log(isAdult(17));
+
+
+const isAdult1 = function(age, AGE_ADULT=18){
+  return age>=AGE_ADULT;
 }
 
-console.log(getPerimetrSquare(33));
-let changeSideSquare = convertNumber(sideSquare)
-console.log(getPerimetrSquare(changeSideSquare));
+const AGE_ADULT = 21;
+
+console.log(isAdult1(20, AGE_ADULT));
+console.log(isAdult1(2));
