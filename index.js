@@ -46,7 +46,7 @@ console.log(checkTriangle(5,6,10));
  * @param {number} c 
  * @returns {null | number[]}
  */
-const solveSquareEquation = function(a,b,c){
+const solveSquareEquation = function(a=1,b=1,c=1){
 
   const D = b*b-4*a*c;
   if(D<0){
@@ -64,3 +64,5 @@ const solveSquareEquation = function(a,b,c){
 console.log(solveSquareEquation(-1,-2,15));
 console.log(solveSquareEquation(1,12,36));
 console.log(solveSquareEquation(5,3,7));
+console.log(solveSquareEquation( ));
+console.log(solveSquareEquation(undefined,undefined,200));
