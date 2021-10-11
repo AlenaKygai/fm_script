@@ -1,81 +1,66 @@
-// //посчитать периметр  var1
 
-// let sideSquare = prompt('Enter side square', '10');
+const logWord = function(word='Hi', sign='!'){
+  console.log(word+sign);
+}
 
-// const getPerimetrSquare = function(){
-//   return 4*sideSquare;
+logWord();
+logWord('Elon Musk');
+logWord(undefined,'?'); //чтобы осталось первое значение по умолчанию 
+
+
+// создать функцию проверка на кратность, которая принимает два числа и проверяет
+// кратность первого вторым
+
+//оператор сравнения возврщает true & false 
+const checkMultiplicity = function (number1 , number2) {
+  return number1 % number2 === 0;
+
+}
+console.log(checkMultiplicity(20,4));
+console.log(checkMultiplicity(20,3));
+
+
+// человек вводит числою Функция возвращает правду если это число больше 20 
+// и кратно 7. В остальных случаях возвращает ложь 
+
+// const checkIpnutNumber = function(num1){
+//   return num1>20 && num1%7===0;
+
 // }
+// console.log(checkIpnutNumber(prompt('Enter number')));
 
-// console.log(getPerimetrSquare());
+// проверить могут ли быть три числа сторонами треугольника 
 
-
-//посчитать периметр  var2
-// const getPerimetrSquare1 = function(sideSquare){
-//   return 4*sideSquare;
-// }
-
-// console.log(getPerimetrSquare1(3));
-
-
-//посчитать периметр  var3
-// const getPerimetrSquare1 = function(a){
-//   return 4*a;
-// }
-
-// console.log(getPerimetrSquare1(5));
+const checkTriangle = function (a,b,c) {
+  return a+b>c && a+c>b && b+c>a ;
+}
+console.log(checkTriangle(4,5,10));
+console.log(checkTriangle(5,6,10));
 
 
+// решение квадратного уравнения
+/**
+ * 
+ * @param {number} a 
+ * @param {number} b 
+ * @param {number} c 
+ * @returns {null | number[]}
+ */
+const solveSquareEquation = function(a,b,c){
 
-
-// let sideSquare = '10';
-// /**
-//  * 
-//  * @param {number} side 
-//  * @returns {number | null}
-//  */
-// const getPerimetrSquare = function(side){
-//   if(isNaN(side)){
-//     return null;
-//   }
-//   return 4*side;
-// }
-// /**
-//  * 
-//  * @param {any} value 
-//  * @returns {Number | Nan}
-//  */
-// const convertNumber = function(value){
-//     if(value === null || value === '' || isNaN(Number(value))){
-//       return NaN;
-//     }
-//     return Number(value);
-// }
-
-// console.log(getPerimetrSquare(33));
-// let changeSideSquare = convertNumber(sideSquare)
-// console.log(getPerimetrSquare(changeSideSquare));
-
-
-
-
-
-const isAdult = function(age){
-  if(age<18){
-    return false;
+  const D = b*b-4*a*c;
+  if(D<0){
+    return null;
   }
-    return true;
-}
-console.log(isAdult(20));
-console.log(isAdult(2));
-console.log(isAdult(18));
-console.log(isAdult(17));
-
-
-const isAdult1 = function(age, AGE_ADULT=18){
-  return age>=AGE_ADULT;
+  if(D===0){
+    const  x = -b / (2*a);
+    return x;
+  }
+  const  x1 = (-b + D**0.5) / (2*a);
+  const  x2 = (-b - D**0.5) / (2*a);
+  return [x1,x2];
 }
 
-const AGE_ADULT = 21;
-
-console.log(isAdult1(20, AGE_ADULT));
-console.log(isAdult1(2));
+console.log(solveSquareEquation(-1,-2,15));
+console.log(solveSquareEquation(1,12,36));
+console.log(solveSquareEquation(5,3,7));
