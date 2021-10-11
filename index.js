@@ -1,46 +1,41 @@
+const data = +prompt('Enter'); 
 
-const isAdult1 = function(age){
-  return age>=18;
+// пользователь должен ввести положительное больше ноля
+
+// if(isNaN(data)){
+//   console.log('invalid data');
+// }else{
+//   if(data>0){
+//     if(data%5===0){
+//       console.log('кратно 5');
+//     }else{
+//       if(data%3===0){
+//         console.log('кратно 3');
+//       }else{
+//         if(data%2===0){
+//           console.log('кратно 2');
+//         }else{
+//           console.log('simple data');
+//         }
+//       }
+//     }
+//   }else{
+//     console.log('invalid data');
+//   }
+// }
+
+if(isNaN(data)){
+  console.log('invalid data'); // not a number
+}else if(data>0){         // positiv number
+    if(data%5===0){
+      console.log('кратно 5');
+    }else if(data%3===0){
+        console.log('кратно 3');
+      }else if(data%2===0){
+          console.log('кратно 2');
+        }else{
+          console.log('simple data');
+        }
+    }else{ // negativ number 
+    console.log('invalid data, must be positiv');
 }
-
-const isAdult = function(age){
-  // if(age>=18){
-  //   return 'adult';
-  // } else{
-  //   return 'not adult';
-  // }
-
-  return age>=18 ? 'adult' : 'not adult' ;
-
-}
-console.log(isAdult(150));
-
-const lpgIsAdult = function(age){
-  const adult = age>=18 ? 'adult' : 'not adult' ;
-  console.log(adult);
-}
-lpgIsAdult(15);
-
-/* 
-Функция запрашивает ввод у пользователя и говорит спасибо,
-если что-то ввели, или пишет сообщение о том, 
-что ничего не введено
-
-1. придумать имя функции
-2. принимает функция аргументы или нет ?
-3. запросить данные
-4. проверить данные на существования и вывести сообщение 
-
-*/
-
-const data = prompt('Enter'); // от prompt возвращает либо string либо ' '  либо null
-
-const logDataInfo = function(info){
-  console.log( info?'спасибо, вы ввели : '+ info : 'вы ничего не ввели');
-}
-logDataInfo(data);
-
-
-const summa=12345;
-const sale = summa>10000 ? 20 : 
-              summa>5000 ? 10 : 50;
