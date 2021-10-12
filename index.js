@@ -1,33 +1,38 @@
-const lang = prompt('Choose language:\n1 - ua\n2 - ru\n3 - it\n4 -en'); 
+/* 
+человек вводит номер месяца, а мы выводим время года
+1,2,12 -winter
+3,4,5 - spring
+6,7,8 - summer
+9,10,11 - autumn 
+*/
 
+const numberOfMounth = prompt('Enter number of mounth');
 
-// if(lang==='1'){
-//   console.log('Добрbй день');
-// }else if(lang==='2'){
-//   console.log('Добрый день');
-// }else if(lang==='3'){
-//   console.log('Bounjur');
-// }if(lang==='4'){
-//   console.log('Good day');
-// }else {
-//   console.log('Invalid input');
-// }
-
-switch (lang) {
+switch (numberOfMounth) {
   case '1':
-    console.log('Добрbй день');
-    break;
   case '2':
-    console.log('Добрbй день');
+  case '12':
+    console.log('Winter');
     break;
-    case '3':
-      console.log('Bounjur');
-      break;
-      case '4':
-        console.log('Good day');
+
+  case '3':
+  case '4':
+  case '5':
+    console.log('Spring');
         break;
-  default:
-    break;
+  case '6':
+  case '7':
+  case '8':
+    console.log('Summer');
+         break;
+  case '9':
+  case '10':
+  case '11':
+     console.log('Autumn');
+      break;
+
+      default:
+        console.log('Invalid input');
+        break;
 }
 
-console.log('Thanks');
