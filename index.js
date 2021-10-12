@@ -1,41 +1,33 @@
-const data = +prompt('Enter'); 
+const lang = prompt('Choose language:\n1 - ua\n2 - ru\n3 - it\n4 -en'); 
 
-// пользователь должен ввести положительное больше ноля
 
-// if(isNaN(data)){
-//   console.log('invalid data');
-// }else{
-//   if(data>0){
-//     if(data%5===0){
-//       console.log('кратно 5');
-//     }else{
-//       if(data%3===0){
-//         console.log('кратно 3');
-//       }else{
-//         if(data%2===0){
-//           console.log('кратно 2');
-//         }else{
-//           console.log('simple data');
-//         }
-//       }
-//     }
-//   }else{
-//     console.log('invalid data');
-//   }
+// if(lang==='1'){
+//   console.log('Добрbй день');
+// }else if(lang==='2'){
+//   console.log('Добрый день');
+// }else if(lang==='3'){
+//   console.log('Bounjur');
+// }if(lang==='4'){
+//   console.log('Good day');
+// }else {
+//   console.log('Invalid input');
 // }
 
-if(isNaN(data)){
-  console.log('invalid data'); // not a number
-}else if(data>0){         // positiv number
-    if(data%5===0){
-      console.log('кратно 5');
-    }else if(data%3===0){
-        console.log('кратно 3');
-      }else if(data%2===0){
-          console.log('кратно 2');
-        }else{
-          console.log('simple data');
-        }
-    }else{ // negativ number 
-    console.log('invalid data, must be positiv');
+switch (lang) {
+  case '1':
+    console.log('Добрbй день');
+    break;
+  case '2':
+    console.log('Добрbй день');
+    break;
+    case '3':
+      console.log('Bounjur');
+      break;
+      case '4':
+        console.log('Good day');
+        break;
+  default:
+    break;
 }
+
+console.log('Thanks');
