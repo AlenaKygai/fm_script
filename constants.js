@@ -1,2 +1,3 @@
 const RIGHT_PASSWORD = 'qwerty123';
 const MAX_COUNT_TRY = 3;
+const MAX_FACTORIAL = 100;
