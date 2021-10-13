@@ -4,28 +4,23 @@ while(count<5){
     count++;
     console.log(count);     // сначало прибавили. потом залогировали
 }
-console.log('End loop');
+/*
+запрашивать у пользователя пароль, пока он не ввидет правильный
+ограничиваем количество попыток 
+*/
 
-// let count = 0;
-// while(true){
-//     if(++count>5){
-//       break;
-//     }
-//     console.log(count);     
-// }
-// console.log('End loop');
-
-
-
-let count = 0;
+let count = MAX_COUNT_TRY;
 while(true){
-    count++;
-    if(count%2===1){
-      continue;     // оператор перевода к началу новой итерраци
-    }
-    if(count>10){
+  const password = prompt('Enter password');
+  count--;
+    if(password === RIGHT_PASSWORD){
+      alert('Thanks');
       break;
     }
-    console.log(count);     
+    if(cont===0){
+      alert('Try is over');
+      break;
+    }
 }
-console.log('End loop');
+
+
