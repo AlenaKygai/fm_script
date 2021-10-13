@@ -26,3 +26,20 @@ console.log(cat.age);
 
 delete cat.isSlipping;
 
+const cat2 = {
+  name: 'Vasia',
+  isMale: true,
+  color: 'white',
+  breed: 'yard',
+  age: '2',
+  weight:'5',
+  isSlipping:false,
+  say:function(){
+    return 'meow-meow';
+  },
+  run:function(){
+    return 'i\'m running '
+  },
+};
+console.log(cat2);
+console.log(cat2.say());
