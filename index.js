@@ -26,7 +26,7 @@ function User(name,sname,age){
   this.name = name;
   this.sname = sname;
   this.age = age;
-  this.fullName = function(){
+  this.fulllName = function(){
     return this.name + ' ' + this.sname;
   }
 }
@@ -35,7 +35,7 @@ const userIrina = new User('Irina', 'Frolova', 25);
 const userVasia = new User('Vasia', 'Volskia', 35);
 const userMiha = new User('Miha', 'Kalugin', 27);
 
-console.log(userMiha.fullName());
+console.log(userMiha.fulllName());
 
 //создать функцию конструктор Country
 //  name,population,area 
@@ -64,23 +64,29 @@ function Auto(name,maxSpeed){
   this.speed = 0;
 
   this.accelerate = function(value){
+    if(value<0){
+      return false;
+    }
     this.speed +=value; 
-    if(this.speed>maxSpeed){
-      this.speed = maxSpeed;
+    if(this.speed>this.maxSpeed){
+      this.speed = this.maxSpeed;
     }
     return this.speed;
-  }
+  };
   this.deaccelerate = function(value){
+    if(value<0){
+      return false;
+    }
     this.speed -= value; 
     if(this.speed<0){
       this.speed = 0;
     }
     return this.speed;
-  }
+  };
   this.stop = function(){
     return (this.speed=0);
   }
-}
+};
 
 const car = new Auto('bmw', 100);
 
