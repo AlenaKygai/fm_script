@@ -93,3 +93,43 @@ const car = new Auto('bmw', 100);
 console.log(car.deaccelerate(50));
 console.log(car.accelerate(150));
 
+// CofeeMachine
+// brand
+// maxVolume
+// volume=0
+
+// isOn = false
+
+// method:
+// addWater(value)
+// makeCoffee(value) 
+// * turnOn()
+
+
+function CoffeMachine(brand, maxVolume, volume = 0, isOn = 'false'){
+  this.brand = brand;
+  this.maxVolume = maxVolume;
+  this.volume = volume;
+  this.isOn = isOn;
+
+  this.addWater = function(value){
+    return this.volume += value;
+  }
+
+  this.turnOn = function(){
+    if (this.isOn = false){
+      return this.isOn = true;
+    } else{
+      return 'Machine is On';
+    }
+  }
+
+  this.makeCoffee = function(value){
+    if (this.isOn == true || value < 0 || this.volume >= value){
+      return this.volume -= value;
+    } else {
+      return 'Check isOn or volume';
+    }
+  }
+}
+
