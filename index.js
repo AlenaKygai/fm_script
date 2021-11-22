@@ -1,14 +1,18 @@
-//шаблонные строки
-const num = 12;
-console.log('rsd' + num);
-const sq = function(n){
-  return n*n;
+const user = {
+  firstName: 'Elon',
+  lastName: 'Musk',
+  age: 50,
+  isMale: true,
 }
-console.log(`sdsd
-sdsdsd'
-${num}
-sdsd
-${sq(num)}
-sdsd"
-`
-)
+const sayHello = function(obj){
+  return  `Hello, ${obj.firstName} ${obj.lastName}!`
+}
+console.log(sayHello(user)); // result - Hello, Elon Musk
+
+const user1 = {
+  firstName: 'Tim',
+  lastName: 'Lii',
+  age: 15,
+  isMale: true,
+}
+console.log(sayHello(user1));
