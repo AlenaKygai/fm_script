@@ -1,18 +1,15 @@
-const user = {
-  firstName: 'Elon',
-  lastName: 'Musk',
-  age: 50,
-  isMale: true,
+const obj = {
+  name:'pen',
+  'is writen': true, // строка может быть именем свойства 
+  11:78,
 }
-const sayHello = function(obj){
-  return  `Hello, ${obj.firstName} ${obj.lastName}!`
-}
-console.log(sayHello(user)); // result - Hello, Elon Musk
 
-const user1 = {
-  firstName: 'Tim',
-  lastName: 'Lii',
-  age: 15,
-  isMale: true,
-}
-console.log(sayHello(user1));
+//доступ к свойству с возможностью вычисления , в квадратных скобках происходит
+// вычисления переданного значения
+const nameProperty = 'is writen';
+console.log(obj[11]);
+console.log(obj['11']);
+console.log(obj['is writen']); 
+console.log(obj['name']);
+console.log(obj['nameProperty']);
+
