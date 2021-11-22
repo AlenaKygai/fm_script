@@ -71,7 +71,7 @@ const checkMathRight = function (num1, num2, operator){
     default:
       break;
   }
-  if(result===null){
+  if(result===null || isNaN(result)){
     return 'Error';
   }
   while(true){
