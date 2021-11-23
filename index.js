@@ -1,32 +1,12 @@
-//таблица умнажения, где пример это свойста , 
-//  значение- это решение этого примера
+const t1 = 1;
+const t2 = 1;
 
-// const table = {
-//   '2 * 2 =' : 4,
-//   '2 * 3 =' : 6,
-// }
+const obj1 = {};
+const obj2 = {};
 
-const obj = {};
-obj.prop1 = 12;
-obj['prop2'] = 22;
+const link = obj1; //копирование по ссылке
 
-const craeteMultiplicationTable = function(min,max){
-  const table = {};
-  for(let i=min; i<=max; i++){
-    for(let j=1; j<=max; j++){
-      //доступ к свойству с возможностью вычисления
-      table[`$(i) * $(j) = `] = i*j;
-    }
-  }
-  return table;
-}
-console.log(craeteMultiplicationTable());
+console.log(obj1==link); // true
+console.log(obj2==link); // false
 
-
-const getNumber = function(str,obj){
-  return obj[str];
-}
-
-const str = '2 * 3 =';
-const table = craeteMultiplicationTable();
-console.log(getNumber(str,table));
+link.prop2 = 44; 
