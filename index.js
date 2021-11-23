@@ -1,22 +1,9 @@
-const obj1 = {};
-const obj2 = Object();
-const obj3 = new Object();
+// const obj1 = {
+//   name: 'obj1',
+// };
+// const obj2 = new Object({name: 'obj2'});
 
-console.log(obj1);
-console.log(obj2);
-console.log(obj3);
+const phArray = new Array('271-45-45', '271-55-45', '271-45-77');
+const phArray2 = ['271-45-45', '271-55-45', '271-45-77'];
 
 
-//способ создавать объекты, без директивы NEW
-//the same like this: const obj2 = Object();  WITHOUT OPERATOR NEW
-function MyObj() {
-  //new - создает пустой объект для функции конструктора
-  //новый объект - this
-  if(!new.target){
-    return new MyObj();
-  }
-}
-
-//WITHOUT OPERATOR(директива) NEW
-const myObj = MyObj();
-console.log(MyObj);
