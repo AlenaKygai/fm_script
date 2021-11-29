@@ -46,3 +46,31 @@ const student2 = {
 };
 console.log(student2.toString());
 
+
+
+
+const rabbit = {
+  color: 'grey',
+  jump: function () {
+    return `${this.name} jump`;
+  },
+};
+
+const rabbitDom = {
+  name:'Banny', 
+  pet: function () {
+    return `Pet ${this.name}`;
+  }
+};
+
+const rabbitMagic = {
+  say: function (word) {
+    return  `${this.name} say ${word}`;
+  }
+};
+rabbitMagic.__proto__ = rabbitDom;
+rabbitDom.__proto__ = rabbit;
+
+console.log(rabbitMagic.jump());
+console.log(rabbitMagic.pet());
+console.log(rabbitMagic.say('hhhh'));
