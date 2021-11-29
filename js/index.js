@@ -3,6 +3,19 @@ function toString() {
   return `${this.firstName} ${this.lastName} `;
 }
 
+const animal = {
+  go: function () {
+    return `${this.firstName} go`;
+  }
+}
+
+const man = {
+  eat: function () {
+    return `${this.firstName} eating`;
+  }
+}
+
+man.__proto__ = animal;
 // литеральный способ
 // {} - это синтаксический сахар в данном контексте, все равно что обращаемся к встроенному конструктору и создаем объект
 // const student1 = new Object({})
@@ -18,6 +31,9 @@ const student1 = {
 };
 
 console.log(student1.toString());
+student1.__proto__ = man; // для наследования от литирального объекта к литеральному объекту другому 
+console.log(student1.eat());
+console.log(student1.go());
 
 const student2 = {
   id:2,
@@ -28,4 +44,5 @@ const student2 = {
 
   toString: toString,
 };
+console.log(student2.toString());
 
