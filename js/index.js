@@ -38,8 +38,38 @@ console.log(student1.eat());
 
 
 
+// new Ladder();
+// value - текущая ступенька (начальная = 0)
+// up()
+// down()
+//showStep()
 
+function LadderPrototype(){
+  this.up = function(value){
+    this.value++;
+    return this;
+  }
+  this.down = function(){
+    this.value--;
+    return this;
+  }
+  this.showStep = function(){
+    return this.value;
+  }
+}
+function Ladder(){
+  this.value = 0;
+  if(!new.target){
+    return new Ladder(value=0);
+  }
+}
+Ladder.prototype = new LadderPrototype();
 
+const ladder = new Ladder();
+console.log(ladder);
+
+const step = ladder.up().up().down().up().up().down().showStep();
+console.log(step);
 
 
 
