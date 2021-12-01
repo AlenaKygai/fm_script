@@ -65,7 +65,7 @@ function Ladder(){
 }
 Ladder.prototype = new LadderPrototype();
 
-const ladder = newLadder();
+const ladder = new Ladder();
 console.log(ladder);
 
 const step = ladder.up().up().down().up().up().down().showStep();
