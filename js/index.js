@@ -60,12 +60,12 @@ function LadderPrototype(){
 function Ladder(){
   this.value = 0;
   if(!new.target){
-    return new Ladder(value=0);
+    return new Ladder();
   }
 }
 Ladder.prototype = new LadderPrototype();
 
-const ladder = new Ladder();
+const ladder = newLadder();
 console.log(ladder);
 
 const step = ladder.up().up().down().up().up().down().showStep();
