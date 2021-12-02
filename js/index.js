@@ -35,6 +35,7 @@ console.log(student1.toString());
 console.log(student1.go());
 console.log(student1.eat());
 
+ 
 
 
 
@@ -99,4 +100,4 @@ rabbitDom.__proto__ = rabbit;
 
 console.log(rabbitMagic.jump());
 console.log(rabbitMagic.pet());
-console.log(rabbitMagic.say('hhhh'));
+console.log(rabbitMagic.say('brrrr'));
