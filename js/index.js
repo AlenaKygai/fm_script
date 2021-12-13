@@ -8,8 +8,15 @@ function square(n){
   return n*n;
 }
 
-for (let i = 0; i < nums.length; i++) {
-  square(nums[i]);
-}
+// for (let i = 0; i < nums.length; i++) {
+//   square(nums[i]);
+// }
 
 nums.forEach(square);
+
+nums.forEach(
+  function(n){
+    console.log(n*n*n);
+    return n*n*n;
+  }
+)

@@ -36,6 +36,9 @@ MyArray.prototype.newMethod = function () {};
 
 const myArray = new MyArray(1,2,15,23,2);
 myArray.push(2,2,2);
+myArray.pop();
+myArray.forEach(square);
+console.log(myArray);
 
 
 
