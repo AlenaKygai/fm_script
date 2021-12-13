@@ -1,11 +1,35 @@
-const users = [{id:1}, {id:2}, {id:3}];
 
-function addSubscribe(user){
-  user.isSubscribing = true;
+function User(firstName, lastName, age, isMale, email, isSubscribe = false){
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+  this.isMale = isMale;
+  this.email = email;
+  this.isSubscribe = isSubscribe;
 }
 
-users.forEach(addSubscribe);
-
-function isEven(n){
-  return n%2 === 0;
+function UserPrototype(){
+  this.fullName = function(){
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
+
+User.prototype = new UserPrototype();
+
+function createRandomUsers(amount = 1){
+  const db = [];
+  for(let i=0; i < amount; i++){
+    const user = new User(
+      `Name${i}`,
+      `LName${i}`,
+      Math.ceil(Math.random()*60+20), // 20-80 years
+      Math.random()>0.5 ,  // true || false
+      `email${i}@gmail.com`
+    );
+    db.push(user);
+  }
+  return db;
+}
+
+const users = createRandomUsers(50);
+console.table(users);
