@@ -31,5 +31,32 @@ function createRandomUsers(amount = 1){
   return db;
 }
 
-const users = createRandomUsers(50);
+const users = createRandomUsers(100);
+users.forEach(function(user){
+  user.isSubscribe = (Math.random()> 0.5);
+});
 console.table(users);
+
+/*получить массив полных имен полльхзователей, используя метод map */
+const fullNameUsers = users.map(function(user){
+  return user.fullName();
+});
+console.table(fullNameUsers);
+
+
+/*получить массив пользователей, которые старше 65 */
+function olderPerson(user){
+  return user.age >= OLD_AGE;
+}
+
+const oldUsers = users.filter(olderPerson);
+console.table(oldUsers);
+
+/*получить массив пользователей, до 40 лет, женского пола у которого есть подписка */
+
+function getSpecialFilter(user){
+ return  user.age < 40 && !user.isMale && user.isSubscribe;
+}
+
+const newWomen = users.filter(getSpecialFilter);
+console.table(newWomen);
