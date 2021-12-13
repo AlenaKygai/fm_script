@@ -1,22 +1,11 @@
+const users = [{id:1}, {id:2}, {id:3}];
 
-//Метод forEach() выполняет указанную функцию один раз для каждого элемента в массиве.
-
-const nums = [1,2,3,4,5];
-
-function square(n){
-  console.log(n*n);
-  return n*n;
+function addSubscribe(user){
+  user.isSubscribing = true;
 }
 
-// for (let i = 0; i < nums.length; i++) {
-//   square(nums[i]);
-// }
+users.forEach(addSubscribe);
 
-nums.forEach(square);
-
-nums.forEach(
-  function(n){
-    console.log(n*n*n);
-    return n*n*n;
-  }
-)
+function isEven(n){
+  return n%2 === 0;
+}

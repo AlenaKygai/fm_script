@@ -29,30 +29,49 @@ function MyArrayProto(){
       func(this[i]);
     }
   }
+  this.some = function(func){
+    for (let i = 0; i < this.length; i++) {
+      if(func(this[i])){
+        return true;
+      }
+    }
+    return false;
+  }
+this.every = function(func){
+  for (let i = 0; i < this.length; i++){
+    if(func(this[i]) === false){
+      return false;
+    }
+  }
+  return true;
+  } 
+
+  this.filter = function(func){
+    const result = new MyArray();
+    for (let i = 0; i < this.length; i++){
+      if(func(this[i])){
+        result.push(this[i]);
+      }
+    }
+    return result;
+  }
 }
+function isOdd(n){
+  return n%2===1;
+} 
+function isEven(n){
+  return n%2 === 0;
+}
+function bigTen(n){
+  return n>10;
+}
+
 /* Protopype */
 MyArray.prototype = new MyArrayProto();
-MyArray.prototype.newMethod = function () {};
 
-const myArray = new MyArray(1,2,15,23,2);
-myArray.push(2,2,2);
-myArray.pop();
-myArray.forEach(square);
-console.log(myArray);
-
-
-
-
-
-// function sum() {
-//   console.log(arguments);
-//   let result=0;
-//   for (let index = 0; index < arguments.length; index++) {
-//     result += arguments[index];
-//   }
-//   return result;
-// }
-
-// console.dir(sum);
-
-// sum(1,2,3,4,54,23);
+const myArray = new MyArray(1,3,14,21,4);
+// myArray.push(2,2,2);
+// myArray.pop();
+// myArray.forEach(square);
+// console.log(myArray);
+console.log(myArray.filter(bigTen));
