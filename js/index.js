@@ -1,12 +1,18 @@
 'use strict';
 
-function recursion(num){
-
-if(num === 0){
-  return;
+const power = (num,exp) =>{
+  if(exp === 1){
+    return num;
+  }
+  return num * power (num,exp -1);
 }
-console.log(num);
+power(2,3);
 
-recursion(num-1);
+
+const factorial = (num) =>{
+  if(num === 0){
+    return 1;
+  }
+  return num * factorial (num - 1);
 }
-recursion(8);
+factorial(4);
