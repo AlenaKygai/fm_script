@@ -1,18 +1,14 @@
 'use strict';
-function logItem(header,index){
-  console.log(this.title);
-  console.log(`${index+1}: ${header}`);
-};
+const t1 = function(){
+  console.log(arguments)
+}
 
-const site = {
-  title:'Green site',
-  headers:['Header1','Header2','Header3','Header4'],
-  showHeaders(){
-    this.headers.forEach((header,index) => {
-      console.log(this.title);
-      console.log(`${index+1}: ${header}`);
-    });
-  }
-};
+const t2 = () => {
+  console.log(arguments)
+}
 
-site.showHeaders();
+console.dir(t1);
+console.dir(t2);
+
+t1(1,2,3,4);
+t2(1,2,3,4);
