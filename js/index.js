@@ -20,9 +20,12 @@ t2(1,2,3,4);
 
 const getSum = (...args) =>{
   let result = null;
-  args.forEach(element => {
-     result += element ;
+  args.forEach((n) => {
+     result += n ;
   });
   return result;
 }
 console.log('result: ' + getSum(1,2,3,4,5));
+
+
+const sum2 = (...args) => args.reduce( (result,n) => result+n);
