@@ -1,23 +1,21 @@
 'use strict';
 
+const site = {
+  title:'Green site',
+  headers:['Header1','Header2','Header3','Header4'],
+  showHeaders(){
+    const that = this;
+    this.headers.forEach((header,index) => {
+      console.log(that.title);
+      console.log(`${index+1}: ${header}`);
 
-// декларативное объявление функции 
-function test1(){
-  console.log(this);
-}
+      // const test = ()=>{
+      //   console.log(this);
+      // }
+      // test();
 
-//выражение  
-// нельзя вызвать перед объявлением функции 
-const test2 = function(){
-  console.log(this);
-}
+    });
+  }
+};
 
-
-//стрелка, берет this ищет из окружения, у нее нет своего контекста
-const test3 = () => {
-  console.log(this);
-}
-
-test1();
-test2();
-test3();
+site.showHeaders();
