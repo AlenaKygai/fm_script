@@ -1,28 +1,35 @@
 'use strict';
 
-const userName = 'Elon';
+/*
+функция которая приводит строку к такому кейсу 'To be or Not to be'
+*/
 
-console.log(userName.toLocaleUpperCase());
+const str = 'to BE or NoT TO Be';
+  
+function getCapitalizeStr(str){
+  const arrWords = str.split(' ');
+  const arrWordsUp = arrWords.map((word)=>{
+    if(word){
+      return word[0].toUpperCase() + word.substring(1).toLowerCase();
+    }
+    return;
+  });
+  return arrWordsUp.join(' '); 
+}
 
-console.log(userName[2]);
-
-console.log(userName.charAt(3));
-
-console.log(userName.charCodeAt(2));
+console.log(getCapitalizeStr(str));
 
 
-
-const str = 'Сегодня хороший день у Илона Маска';
-console.log(str.includes('я'));
-console.log(str.includes('день'));
-console.log(str.indexOf('день'));
-
-
-const str1 = '      qwewq     ';
-console.log(str1.trim());
-
-const str2 = 'To be or not to be';
-console.log(str2.split());
-console.log(str2.split(''));
-console.log(str2.split(' '));
-console.log(str2.split('or'));
+/*
+function getCapitalizeStr(str){
+  return str
+  .split(' ')
+    .map((word)=>{
+      if(word){
+        return word[0].toUpperCase() + word.substring(1).toLowerCase();
+      }
+  })
+  return arrWordsUp.join(' '); 
+}
+console.log(getCapitalizeStr(str));
+*/
