@@ -1,30 +1,18 @@
 'use strict';
 
-const power = (num,exp) =>{
-  if(exp === 1){
-    return num;
-  }
-  return num * power (num,exp -1);
+const boolean = new Boolean (false); // одна из возможностей - явное приведение типа
+console.log(boolean); // object
+
+if(boolean){
+  console.log('true')
+}else{
+  console.log('false')
 }
-power(2,3);
 
 
-const factorial = (num) =>{
-  if(num === 0){
-    return 1;
-  }
-  return num * factorial (num - 1);
+const str = 'Elon';
+if(Boolean(str)){
+  console.log(Boolean(str))
+}else{
+  console.log('false')
 }
-factorial(4);
-
-const maxNumbers = (a,b) => a>b ? a : b;
-console.log(maxNumbers(10,4));
-
-
-const showArg = (a,b, ...c) =>{
-  console.log(c);
-  c.forEach(() => {
-    console.log(this);
-  });
-}
-showArg(1,2,3,4,5,6); // 
