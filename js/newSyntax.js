@@ -12,24 +12,36 @@ class UserClass{
     this.sname = sname;
     this.age = age; // setter
   }
+  //получить значения свойства
   get age(){
     return this._age;
   }
+  //установить новое значение свойству
   set age(age){
     if(typeof age!=='number'){
-      throw new TypeError('Age must be number')
+      throw new TypeError('Age must be number');
     }
     if(age < 0 || age> MAX_AGE){
-      throw new RangeError(`Age must be > 0 and < ${MAX_AGE} `)
+      throw new RangeError(`Age must be > 0 and < ${MAX_AGE} `);
     }
     this._age = age;
   }
-  getFullName(){
+  get fullName(){
     return `${this.name} ${this.sname}`;
   }
-
-  checkAdult(){
+  set fullName(newFullName){
+    if(typeof newFullName!=='string'){
+      throw new TypeError('Name must be string');
+    }
+    const arrFullName = newFullName.split(' ');
+    this.name = arrFullName[0];
+    this.sname = arrFullName[1];
+  }
+  get checkAdult(){
     return this._age >= ADULT_AGE;
+  }
+  static createTestUser(){
+    return new UserClass('Test', 'STest', 20);
   }
 }
 
