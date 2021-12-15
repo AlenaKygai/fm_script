@@ -1,6 +1,6 @@
 'use strict';
 
-const boolean = new Boolean (false); // одна из возможностей - явное приведение типа
+const boolean = new Boolean (false); // одна из возможностей - явное прeведение типа
 console.log(boolean); // object
 
 if(boolean){
