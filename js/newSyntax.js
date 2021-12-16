@@ -52,23 +52,40 @@ u2.age = 48; // setter
 console.log(u2.age); // getter
 
 
-// class Worker{
-//   /**
-//    * 
-//    * @param {string} name 
-//    * @param {string} sname 
-//    * @param {number} rate 
-//    * @param {number} wdays 
-//    */
-//   constructor(name,sname,rate,wdays){
-//     this.name = name;
-//     this.sname = sname;
-//     this.rate = rate;
-//     this.wdays = wdays;
-//   }
-//   getSalary(){
-//     return this.rate*this.wdays;
-//   }
-// }
-// const w1 = new Worker('Alena', 'Kygai','10','10');
-// console.log(w1.getSalary());
+class Worker{
+  /**
+   * @param {string} name 
+   * @param {string} sname 
+   * @param {number} rate 
+   * @param {number} wdays 
+   */
+  constructor(name,sname,rate,wdays){
+    this.name = name;
+    this.sname = sname;
+    this.rate = rate;
+    this.wdays = wdays;
+  }
+  get rate(){
+    return this._rate;
+  }
+  set rate(rate){
+    if(typeof rate!=='number'){
+      throw new TypeError('Rate must be number');
+    }
+    this._rate = rate;
+  }
+  get wdays(){
+    return this._wdays;
+  }
+  set wdays(wdays){
+    if(typeof wdays!=='number'){
+      throw new TypeError('Working days must be number');
+    }
+    this._wdays = wdays;
+  }
+  getSalary(){
+    return this.rate*this.wdays;
+  }
+}
+const w1 = new Worker('Alena', 'Kygai','10','10');
+console.log(w1.getSalary());
