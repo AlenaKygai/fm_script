@@ -6,49 +6,42 @@
 3. Полиморфизм
 */
 
-class User{
-  constructor(name,sname,age){
+class Squirrel{
+  constructor(name,color){
     this.name = name;
-    this.sname = sname;
-    this.age = age;
-    this.isBun = false;
+    this.color = color;
   }
-  getFullName(){
-    return `${this.name} ${this.sname}`;
-  }
-  static isUser(obj){
-    return obj instanceof User;
+  jump(){
+    return `${this.name} jumping`;
   }
 }
 
-class Moderator extends User{
-  constructor(name,sname,age,rule){
-    super(name,sname,age); //вызывает конструктор родительского класса
-    this.rule = rule;
+class  FlyingSquirrel extends Squirrel{
+  constructor(name,color,maxWayFly){
+    super(name,color);
+    this.maxWayFly = maxWayFly;
   }
-  addMessage(message){}
-  removeMessage(id){}
-}
-
-class Admin extends User{
-  constructor(name,sname,age, mail){
-    super(name,sname,age); //вызывает конструктор родительского класса
-    this.mail = mail;
-  }
-  toggleBan(obj){
-    if(User.isUser(obj)){
-    obj.isBun = !obj.isBun;
-    }
+  flying(){
+    return `${this.name} flying to ${this.maxWayFly}`;
   }
 }
 
-class Owner extends Admin{
-
+class SquirrelPushkin extends Squirrel{
+  constructor(name,color,maxWayFly,songs){
+    super(name,color,maxWayFly);
+    this.songs = songs;
+  }
+  dancing(){
+    return `${this.name} dancing`;
+  }  
+  sing(){
+    return `${this.name} sing ${this.songs.join(',')} `;
+  }
 }
-class God extends Owner{
 
-}
-
-const user = new User('Test', 'STest', 33);
-const moder = new Moderator('Test', 'STest', 34 , true);
-const admin = new Admin('Elon', 'Musk', 37, 'musk@gmail.com');
+const squirrelPushkin = new SquirrelPushkin('Magic', 'rainbow', '400m', ['fly to the moon', 'Titanium']);
+console.log(squirrelPushkin);
+console.log(squirrelPushkin.jump());
+console.log(squirrelPushkin.flying());
+console.log(squirrelPushkin.dancing());
+console.log(squirrelPushkin.sing());
