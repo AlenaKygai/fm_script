@@ -1,29 +1,54 @@
 'use strict';
 
-class Animal{
-  constructor(name, amountOfLegs, type){   //constructor для описание данных 
+/* 
+1. Инкапсуляция 
+2. Наследование - это расширение классов
+3. Полиморфизм
+*/
+
+class User{
+  constructor(name,sname,age){
     this.name = name;
-    this.amountOfLegs = amountOfLegs;
-    this.type = type;
+    this.sname = sname;
+    this.age = age;
+    this.isBun = false;
   }
-  get name(){
-    return this._name;
+  getFullName(){
+    return `${this.name} ${this.sname}`;
   }
-  set name(value){
-    if(typeof value ==='string'){
-      return this._name = value;
-    }
-    throw new TypeError('Name must be string');
-  }
-  eat(){
-    return `${this._name} is eating`;
-  }
-  static isAnimal(obj){
-    return obj instanceof Animal;
+  static isUser(obj){
+    return obj instanceof User;
   }
 }
 
-const cat1 = new Animal('Pushok', 4, 'cat');
-const dog1 = new Animal('Rem', 4, 'dog');
-cat1.name = 'Barsik';
+class Moderator extends User{
+  constructor(name,sname,age,rule){
+    super(name,sname,age); //вызывает конструктор родительского класса
+    this.rule = rule;
+  }
+  addMessage(message){}
+  removeMessage(id){}
+}
 
+class Admin extends User{
+  constructor(name,sname,age, mail){
+    super(name,sname,age); //вызывает конструктор родительского класса
+    this.mail = mail;
+  }
+  toggleBan(obj){
+    if(User.isUser(obj)){
+    obj.isBun = !obj.isBun;
+    }
+  }
+}
+
+class Owner extends Admin{
+
+}
+class God extends Owner{
+
+}
+
+const user = new User('Test', 'STest', 33);
+const moder = new Moderator('Test', 'STest', 34 , true);
+const admin = new Admin('Elon', 'Musk', 37, 'musk@gmail.com');
