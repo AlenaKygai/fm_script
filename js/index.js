@@ -9,10 +9,14 @@
 class Figure{
   constructor(name){
     this.name = name;
+    Figure.amount++;
   }
   getArea(){
-
   }
+  static isFigure(){
+    return obj instanceof Figure;
+  }
+  static amount = 0;
 }
 
 class Square extends Figure{
