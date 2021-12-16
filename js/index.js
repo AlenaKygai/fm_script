@@ -1,47 +1,58 @@
 'use strict';
 
 /* 
-1. Инкапсуляция 
+1. Инкапсуляция - сокрытие логики
 2. Наследование - это расширение классов
-3. Полиморфизм
+3. Полиморфизм -способность функции обрабатывать данных разных типов
 */
 
-class Squirrel{
-  constructor(name,color){
+class Figure{
+  constructor(name){
     this.name = name;
-    this.color = color;
   }
-  jump(){
-    return `${this.name} jumping`;
+  getArea(){
+
   }
 }
 
-class  FlyingSquirrel extends Squirrel{
-  constructor(name,color,maxWayFly){
-    super(name,color);
-    this.maxWayFly = maxWayFly;
+class Square extends Figure{
+  constructor(a){
+    super('Square');
+    this.a = a;
   }
-  flying(){
-    return `${this.name} flying to ${this.maxWayFly}`;
-  }
-}
-
-class SquirrelPushkin extends Squirrel{
-  constructor(name,color,maxWayFly,songs){
-    super(name,color,maxWayFly);
-    this.songs = songs;
-  }
-  dancing(){
-    return `${this.name} dancing`;
-  }  
-  sing(){
-    return `${this.name} sing ${this.songs.join(',')} `;
+  getArea(){
+    return this.a*this.a;
   }
 }
 
-const squirrelPushkin = new SquirrelPushkin('Magic', 'rainbow', '400m', ['fly to the moon', 'Titanium']);
-console.log(squirrelPushkin);
-console.log(squirrelPushkin.jump());
-console.log(squirrelPushkin.flying());
-console.log(squirrelPushkin.dancing());
-console.log(squirrelPushkin.sing());
+class Triangular extends Figure{
+  constructor(a,b,angle){
+    super('Triangular');
+    this.a = a;
+    this.b = b;
+    this.angle = angle;
+  }
+  getArea(){
+    return this.a*this.b*Math.sin(this.angle*(180/Math.PI));
+  }
+}
+
+class Circle extends Figure{
+  constructor(r){
+    super('Circle');
+    this.r = r;
+  }
+  getArea(){
+    return this.r*this.r*Math.PI;
+  }
+}
+
+const t = new Triangular(3,4, 45);
+const c = new Circle(10);
+
+function getAreaFigure(figure){
+return figure.getArea();
+}
+
+console.log(t.getArea());
+console.log(c.getArea());
