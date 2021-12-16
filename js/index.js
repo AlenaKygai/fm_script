@@ -1,7 +1,11 @@
 'use strict';
 
-const obj = {
-  prop:1,
-};
+// const Test = class{};
 
-const obj2 = new Object({prop:1});
+function test(a,b, ...args){
+  console.log();
+  return class{
+    constructor(a,b){}
+  }
+}
+const Test1 = test(1,2,3);
