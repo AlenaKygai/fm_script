@@ -1,11 +1,29 @@
 'use strict';
 
-// const Test = class{};
-
-function test(a,b, ...args){
-  console.log();
-  return class{
-    constructor(a,b){}
+class Animal{
+  constructor(name, amountOfLegs, type){   //constructor для описание данных 
+    this.name = name;
+    this.amountOfLegs = amountOfLegs;
+    this.type = type;
+  }
+  get name(){
+    return this._name;
+  }
+  set name(value){
+    if(typeof value ==='string'){
+      return this._name = value;
+    }
+    throw new TypeError('Name must be string');
+  }
+  eat(){
+    return `${this._name} is eating`;
+  }
+  static isAnimal(obj){
+    return obj instanceof Animal;
   }
 }
-const Test1 = test(1,2,3);
+
+const cat1 = new Animal('Pushok', 4, 'cat');
+const dog1 = new Animal('Rem', 4, 'dog');
+cat1.name = 'Barsik';
+
