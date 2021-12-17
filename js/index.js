@@ -16,3 +16,7 @@ const arr = [1,2,3,4,5];
 for (const iterator of arr) {
   console.log(iterator);
 }
+
+// console.log(...arr);
+const myArray2 = new MyArray(10,20,30);
+console.log(...myArray2);

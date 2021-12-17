@@ -93,4 +93,18 @@ flat(depth=1){
   static isArray(obj){
   return obj instanceof MyArray;
   }
+
+  [Symbol.iterator](){
+    let i = 0;
+    const myArr = this;
+    return {
+      next(){
+        return{
+          value: myArr[i++],
+          done: i>myArr.length,
+        };
+      }
+    };
+  }
 }
+
