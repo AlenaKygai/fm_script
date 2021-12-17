@@ -1,11 +1,28 @@
 'use strict';
 
+class MyArrayIterator{
+  constructor(myArr){
+    this.arr = myArr;
+    this.currentIndex= 0;
+  }
+  next(){
+    return{
+      value: this.arr[this.currentIndex++], 
+      done: this.currentIndex > this.arr.length,
+    }
+  }
+}
+
 class MyArray{
   constructor(){
     this.length = 0;
     for (let i = 0; i < arguments.length; i++) {
       this.push(arguments[i]);
     }
+  }
+
+  [Symbol.iterator](){
+    return new MyArrayIterator(this);
   }
   push() {
     for (let i = 0; i < arguments.length; i++) {
@@ -88,23 +105,9 @@ flat(depth=1){
   });
   return result;
 }
-
-
   static isArray(obj){
   return obj instanceof MyArray;
   }
 
-  [Symbol.iterator](){
-    let i = 0;
-    const myArr = this;
-    return {
-      next(){
-        return{
-          value: myArr[i++],
-          done: i>myArr.length,
-        };
-      }
-    };
-  }
 }
 
